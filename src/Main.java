@@ -3,6 +3,13 @@ public class Main {
 
 
         Car car = new Car();
+
+        car.setMake("masserati");
+        car.setModel("Carrera");
+        car.setDoors(3);
+        car.setColor("Pink");
+        car.setConvertible(true);
+
         car.describeCar();
     }
 }

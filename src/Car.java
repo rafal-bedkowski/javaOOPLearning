@@ -2,13 +2,23 @@ public class Car {
 
     private String make;
     private String model;
+    private String color;
+    private int doors;
+    private boolean convertible;
 
     public String getMake() {
         return make;
     }
 
     public void setMake(String make) {
-        this.make = make;
+        if (make == null) make = "Unknown";
+        String lowercaseMake = make.toLowerCase();
+        switch (lowercaseMake) {
+            case "holden", "porshe", "tesla" -> this.make = make;
+            default -> {
+                this.make = "Unsupported";
+            }
+        }
     }
 
     public String getModel() {
@@ -43,9 +53,6 @@ public class Car {
         this.convertible = convertible;
     }
 
-    private String color;
-    private int doors;
-    private boolean convertible;
 
     public void describeCar() {
         System.out.println(doors + "-doors " +
